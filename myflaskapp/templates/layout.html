@@ -1,0 +1,77 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Quatek{% endblock %}
+
+{% block styles %}
+	<link rel="stylesheet" href="/static/public_assets/bootstrap-4.2.1-dist/css/bootstrap3.3.7.min.css">
+
+	<style>
+		.btn-title {
+			color: #a4aeba;
+			height:100%;
+			width: 150px;
+			background-color: #323a4a;
+			border:none;
+			font-size: 18px;
+		}
+
+
+		.btn-title:active, .btn-title:focus, .btn-title:hover {
+			border-color:#1d2438;
+			background-color: #1d2438;
+			outline: none;
+			}
+
+
+		.btn-image {
+			color: #a4aeba;
+			height:100%;
+			width: 85px;
+			background-color: white;
+			border:none;
+		}
+		.btn-image:active, .btn-image:focus, .btn-image:hover {
+			border-color:#4a7e6c;
+			background-color: #4a7e6c;
+			outline: none;
+			}
+
+
+	</style>
+
+
+
+
+{% endblock %}
+
+{% block navbar %}
+
+<div class="navbar " role="navigation">
+
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="width:1500px; padding:0;">
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+
+	{% block page_middle %}{% endblock %}
+
+
+
+    {% block page_content %}{% endblock %}
+
+
+
+</div>
+{% endblock %}
+
+
+
